@@ -1,6 +1,9 @@
 import java.util.*;
 import java.util.stream.*; 
 
+/*
+ * An algorithm of O(n^3) for n x n matrix multiplication 
+ */
 public class SquareMatrixMultiply {
 	
 	public static void main (String [] args) {
