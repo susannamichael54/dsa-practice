@@ -22,11 +22,7 @@ public class HeapSort {
 	public static void heapify(int [] arry, int n, int heapSize) {
 		int largestIndex = n;
 		int leftIndex = 2 * n + 1;
-		int rightIndex = 2 * n + 2;	
-		if(n == 0){
-			leftIndex = 1;
-			rightIndex = 2;
-		}		
+		int rightIndex = 2 * n + 2;			
 		if(leftIndex <= heapSize && arry[leftIndex] > arry[largestIndex]) {
 			largestIndex = leftIndex;
 		}
