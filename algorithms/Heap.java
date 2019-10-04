@@ -86,15 +86,20 @@ public class Heap {
 	}
 
 	public static void main (String [] args) {
-		Heap heap = new Heap(7);
-		heap.insert(5);
-		heap.insert(1);
-		heap.insert(6);
-		heap.insert(2);
-		heap.insert(3);
-		heap.insert(10);
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the size of the heap");
+		int size = scan.nextInt();
+		scan.nextLine();
+		Heap heap = new Heap(size);
+		for(int i = 0; i < size; i++) {
+			System.out.println("Enter the " + i + "th element");
+			int ith = scan.nextInt();
+			heap.insert(ith);
+		}
 		heap.print();
 		heap.remove();
+		heap.print();
+		heap.insert(15);
 		heap.print();
 	}
 
