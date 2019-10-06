@@ -1,9 +1,7 @@
-package com.isthiri.controller;
-
 import java.util.*;
 import java.util.stream.Stream;
 
-class RadixSort {
+public class RadixSort {
 
 	public static void main (String [] args) {
 		System.out.println("Enter the array to be sorted as spaced separated integers");
