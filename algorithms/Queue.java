@@ -5,6 +5,7 @@ public class Queue {
 
 	private int tail = 0;
 	private int head = 0;
+	private int length = 0;
 	private int [] queue;
 
 	public Queue(int length) {
@@ -32,6 +33,14 @@ public class Queue {
 		return output;
 	}
 
+	public boolean isEmpty() {
+		if(this.head == this.tail) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	private int incrementIndex(int index) {
 		if(index == queue.length - 1) {
 			return 0;
@@ -54,10 +63,10 @@ public class Queue {
 		for(int i = 0; i < n; i++) {
 			queue.enqueue(inputArry[i]);
 		}
-		System.out.println("Dequeue 1: " + queue.dequeue());
-		System.out.println("Dequeue 2: " + queue.dequeue());
-		System.out.println("Dequeue 3: " + queue.dequeue());
-		System.out.println("Dequeue 4: " + queue.dequeue());
-		System.out.println("Dequeue 5: " + queue.dequeue());
+		System.out.println("Is Queue empty: " + queue.isEmpty());
+		for(int i = 0; i < n; i++) {
+			System.out.println("Dequeue " + (i + 1) + ": " + queue.dequeue());
+		}
+		System.out.println("Is Queue empty: " + queue.isEmpty());
 	}
 }
