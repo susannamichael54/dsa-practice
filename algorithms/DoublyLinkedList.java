@@ -74,6 +74,8 @@ public class DoublyLinkedList {
 
 	public static void main (String [] args) {
 		DoublyLinkedList doublyLinkedLst = new DoublyLinkedList();
+
+		//Insert elements to the list
 		System.out.println("Enter the number of Strings to be inserted in the list: ");
 		int n = scan.nextInt();
 		System.out.println("Enter the Strings to be inserted: ");
@@ -81,15 +83,22 @@ public class DoublyLinkedList {
 		for(int i = 0; i < n; i++) {
 			doublyLinkedLst.insert(scan.nextLine());
 		}
-		System.out.println("The linked list is: ");
+		System.out.println("The elements in the linked list are : ");
 		doublyLinkedLst.print();
+
+		//Find element in the list
+		System.out.println("\nEnter the element to find: ");
+		String output = doublyLinkedLst.find(scan.nextLine());
+		System.out.println("Element found in the list: " + output);
+
+		//Delete elements from the list
 		deleteElements(n, doublyLinkedLst);
 		System.out.println("The list after deletion: ");
 		doublyLinkedLst.print();
 	}
 
 	public static void deleteElements(int n, DoublyLinkedList doublyLinkedLst) {
-		System.out.println("\nEnter the number of elements to be deleted from the list: ");
+		System.out.println("Enter the number of elements to be deleted from the list: ");
 		int d = scan.nextInt();
 		if(d > n) {
 			System.out.println("Enter a number less than the size of the list: ");

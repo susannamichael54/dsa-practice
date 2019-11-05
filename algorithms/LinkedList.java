@@ -44,6 +44,8 @@ public class LinkedList {
 		}
 	}
 
+
+
 	private Link findPrevious (Link l) {
 		Link link = this.head;
 		while (null != link) {
@@ -63,10 +65,25 @@ public class LinkedList {
 		}
 	}
 
+	public String find(String str) {
+		Link l = this.head;
+		String output = null;
+		while(null != l) {
+			if(l.str.equals(str)) {
+				output = l.str;
+				break;
+			}
+			l = l.next;
+		}
+		return output;
+	}
+
 	private static Scanner scan = new Scanner(System.in);
 
 	public static void main (String [] args) {
 		LinkedList llst = new LinkedList();
+
+		//Insert elements to the list
 		System.out.println("Enter the number of strings to be inserted to the list: ");
 		int n = scan.nextInt();
 		System.out.println("Enter the strings to be inserted into the list:");
@@ -76,13 +93,20 @@ public class LinkedList {
 		}
 		System.out.println("The elements in the linked list are: ");
 		llst.print();
+
+		//Find element in the list
+		System.out.println("\nEnter the element to find: ");
+		String output = llst.find(scan.nextLine());
+		System.out.println("Element found in the list: " + output);
+
+		//Delete elements from the list
 		deleteElements(n, llst);
 		System.out.println("The list after deletion: ");
 		llst.print();
 	}
 
 	public static void deleteElements(int n, LinkedList llst) {
-		System.out.println("\nEnter the number of elements to be deleted from the list: ");
+		System.out.println("Enter the number of elements to be deleted from the list: ");
 		int d = scan.nextInt();
 		if(d > n) {
 			System.out.println("Enter a number less than the size of the list: ");
